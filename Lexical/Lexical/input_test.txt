@@ -1,0 +1,11 @@
+double function(int a,double b)
+{
+	int c=1;
+	double d=0;
+	c=a;
+	while(c)
+	{
+		d=b;
+	}
+	return d;
+}

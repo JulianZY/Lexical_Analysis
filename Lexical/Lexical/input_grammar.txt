@@ -1,0 +1,10 @@
+S->pC
+S->sr;
+S->$
+A->,qA
+A->$
+A->=rB
+B->,q=rB
+B->$
+C->t(){S}
+C->qA;S

@@ -1,0 +1,145 @@
+(1)、普通样例
+int main()
+{
+	int a=50;
+	double bb=56.7;
+	int cc_c=62;
+	if(a==bb)
+	{
+		bb=cc_c;
+	}
+	else
+	{
+		int dddd,eeeee;
+		dddd=34;
+		eeeee=dddd;
+	}
+	while(!bb)
+	{
+		cc_c+=bb;
+	}
+	return 0;
+}
+
+S->pE
+S->qI
+S->{S}S
+S->srD
+S->t(L
+S->u{S}S
+S->$
+B->(){S}
+B->=r;S
+B->,q;S
+D->B
+D->;
+E->tB
+E->qB
+F->r;S
+F->q;S
+I->=F
+I->+=q;S
+J->r
+J->q
+K->)S
+K->==J)S
+L->!q)S
+L->qK
+
+（2）、用于检测变量定义赋值顺序的限定
+int main()
+{
+	int a,b,c;
+	int d,e=1;
+	double f,g=7.8,h=6.0;
+	double i,j;
+	return 0;
+}
+
+S->pC
+S->sr;
+S->$
+A->,qA
+A->$
+A->=rB
+B->,q=rB
+B->$
+C->t(){S}
+C->qA;S
+
+（3）、用于检测函数的定义
+double function(int a,double b)
+{
+	int c=1;
+	double d=0;
+	c=a;
+	while(c)
+	{
+		d=b;
+	}
+	return d;
+}
+
+S->vq(A){S}
+S->pqD
+S->t(B){S}S
+S->q=B;S
+S->$
+A->pqC
+A->$
+B->q
+B->r
+C->,pqC
+C->$
+D->(A){SsB;}
+D->=B;S
+
+（4）、用于检测运算符及连续运算
+int main()
+{
+	int a=0;
+	int b=1;
+	double c=2.3;
+	double d=4.5; 
+	a=c-d;
+	b=d&c;
+	a=d*c-b;
+	c=1+b-5&a*4;
+	d=!c;
+	while(a>b)
+	{
+		b=a-c+d;
+	}
+	return 0;
+}
+
+S->pE
+S->q=G
+S->t(H
+S->sr;S
+S->$
+A->,pqB
+A->B
+B->=C
+B->$
+C->r
+C->q
+D->OF
+D->$
+E->t(){S}
+E->qA;S
+F->rD
+F->qD
+G->qD;S
+G->rD;S
+G->!C;S
+H->qD){S}S
+H->rD){S}S
+O->+
+O->-
+O->*
+O->/
+O->&
+O->|
+O-><
+O->>
